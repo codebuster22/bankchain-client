@@ -75,7 +75,7 @@ class App extends Component {
 
     fetchAuctionManagerAddress = async() =>{
         try{
-            const response = await fetch("http://localhost:3001/getAuctionManager/");
+            const response = await fetch("https://blooming-retreat-49988.herokuapp.com/getAuctionManager/");
             return await response.json();
         }catch (e) {
             console.log("Couldn't fetch data from Server");
@@ -98,7 +98,7 @@ class App extends Component {
 
     feedDataToState = async (_address) => {
         try {
-            const response = await fetch("http://localhost:3001/fetchData", {
+            const response = await fetch("https://blooming-retreat-49988.herokuapp.com/fetchData", {
                 method: 'post',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
@@ -113,7 +113,7 @@ class App extends Component {
 
     fetchAddress = async () =>{
         try {
-            const response = await fetch('http://localhost:3001/getAddress');
+            const response = await fetch('https://blooming-retreat-49988.herokuapp.com/getAddress');
             const data = await response.json();
             this.setState({
                 contracts: data
